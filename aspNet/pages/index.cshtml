@@ -1,4 +1,15 @@
-﻿@page // Páginas rezor vem com esta diretiva
+﻿@page 
+<!-- Páginas rezor vem com esta diretiva -->
+<!-- 
+
+Apage Esta é uma diretiva das páginas Razor que indica que este arquivo é uma página Razor. 
+Ele define a estrutura base da página e é geralmente o ponto de partida para a configuração de uma página web.
+
+Amodel aspNet.pages.indexModel: Esta diretiva define o modelo de página para esta página Razor. 
+Ela especifica qual classe atua como o modelo para essa página, permitindo que você acesse os dados e métodos 
+definidos na classe indexModel (aqui, pertencente à namespace aspNet.pages).
+
+-->
 @model aspNet.pages.indexModel // "aspNet" é o nome da minha namespace e o "Page" é a pasta page e o "IndexModel" é a classe
 
 <html>
@@ -43,3 +54,15 @@
     </body>
 
 </html>
+
+<!-- 
+
+@foreach (var category in Model.Categories): Aqui, você está usando uma estrutura de controle 
+foreach do Razor para iterar sobre cada Category no modelo Categories que foi passado para a página. 
+O Model refere-se à instância de indexModel que está sendo usada como modelo para esta página.
+
+@category.Id, @category.Title, @category.Price: Estas são instruções do Razor para renderizar as
+propriedades Id, Title e Price do objeto category.
+
+
+-->
