@@ -1,0 +1,45 @@
+﻿@page // Páginas rezor vem com esta diretiva
+@model aspNet.pages.indexModel // "aspNet" é o nome da minha namespace e o "Page" é a pasta page e o "IndexModel" é a classe
+
+<html>
+
+    <head>
+
+        <title></title>
+
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        Title
+                    </td>
+                    <td>
+                        Price
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model.Categories){
+                <tr>
+                    <td>
+                        @category.Id
+                    </td>
+                    <td>
+                        @category.Title
+                    </td>
+                    <td>
+                        @category.Price
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </body>
+
+</html>
