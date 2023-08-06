@@ -1,59 +1,52 @@
 ﻿@page 
-<!-- Páginas rezor vem com esta diretiva -->
-<!-- 
+<!-- Páginas rezor vêm com esta diretiva -->
+<!--
 
-Apage Esta é uma diretiva das páginas Razor que indica que este arquivo é uma página Razor. 
+Apage Esta é uma diretiva das páginas Razor que indica que este arquivo é uma página Razor.
 Ele define a estrutura base da página e é geralmente o ponto de partida para a configuração de uma página web.
 
-Amodel aspNet.pages.indexModel: Esta diretiva define o modelo de página para esta página Razor. 
-Ela especifica qual classe atua como o modelo para essa página, permitindo que você acesse os dados e métodos 
+Amodel aspNet.pages.indexModel: Esta diretiva define o modelo de página para esta página Razor.
+Ela especifica qual classe atua como o modelo para essa página, permitindo que você acesse os dados e métodos
 definidos na classe indexModel (aqui, pertencente à namespace aspNet.pages).
 
 -->
 @model aspNet.pages.indexModel // "aspNet" é o nome da minha namespace e o "Page" é a pasta page e o "IndexModel" é a classe
+@{
+    Layout = "View/Shared/_Layout"; // Precisa ter página View e Shared
+}
+@using System.Globalization
 
-<html>
-
-    <head>
-
-        <title></title>
-
-    </head>
-
-    <body>
-        <table>
-            <thead>
-                <tr>
-                    <td>
-                        ID
-                    </td>
-                    <td>
-                        Title
-                    </td>
-                    <td>
-                        Price
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var category in Model.Categories){
-                <tr>
-                    <td>
-                        @category.Id
-                    </td>
-                    <td>
-                        @category.Title
-                    </td>
-                    <td>
-                        @category.Price
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    </body>
-
-</html>
+<h1>Categorias</h1>
+<table>
+    <thead>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                Title
+            </td>
+            <td>
+                Price
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.Categories){
+        <tr>
+            <td>
+                @category.Id
+            </td>
+            <td>
+                @category.Title
+            </td>
+            <td>
+                @category.Price.ToString("C", provider:new CultureInfo("pt-BR"))
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
 
 <!-- 
 

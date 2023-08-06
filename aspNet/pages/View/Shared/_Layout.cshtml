@@ -1,0 +1,23 @@
+@using System.Globalization
+<!-- Para renderizar de maneira dinâmica as páginas -->
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Home</title>
+
+</head>
+
+<body>
+    <header>
+        <partial name="View/Shared/_NavMenuPartial" />
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+</body>
+
+</html>
