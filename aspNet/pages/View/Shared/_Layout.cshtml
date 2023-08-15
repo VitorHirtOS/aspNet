@@ -7,7 +7,10 @@
 
 <head>
 
-    <title>Home</title>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="css/site.css" asp-append-version="true" /> <!-- asp-append-version="true" para trabalhar caso queira trocar o css sem ter problemas -->
+    <link rel="stylesheet" href="~/aspNet.styles.css" asp-append-version="true" /> <!-- asp-append-version="true" para trabalhar caso queira trocar o css sem ter problemas -->
+    <script src="js/site.js" defer></script>
 
 </head>
 
@@ -15,9 +18,15 @@
     <header>
         <partial name="View/Shared/_NavMenuPartial" />
     </header>
-    <main>
-        @RenderBody()
-    </main>
+<main>
+    @RenderBody()
+</main>
+<footer>
+
+</footer>
+
+@RenderSection("scripts", required:false)
+
 </body>
 
 </html>

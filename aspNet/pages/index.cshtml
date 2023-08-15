@@ -13,40 +13,14 @@ definidos na classe indexModel (aqui, pertencente à namespace aspNet.pages).
 @model aspNet.pages.indexModel // "aspNet" é o nome da minha namespace e o "Page" é a pasta page e o "IndexModel" é a classe
 @{
     Layout = "View/Shared/_Layout"; // Precisa ter página View e Shared
+    ViewData["Title"] = "Home";
 }
-@using System.Globalization
 
-<h1>Categorias</h1>
-<table>
-    <thead>
-        <tr>
-            <td>
-                ID
-            </td>
-            <td>
-                Title
-            </td>
-            <td>
-                Price
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var category in Model.Categories){
-        <tr>
-            <td>
-                @category.Id
-            </td>
-            <td>
-                @category.Title
-            </td>
-            <td>
-                @category.Price.ToString("C", provider:new CultureInfo("pt-BR"))
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+
+@section scripts
+{
+    <script src="~/js/site.js"></script>
+}
 
 <!-- 
 

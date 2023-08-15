@@ -1,12 +1,18 @@
 ﻿@page "~/Entrar"
 @model aspNet.pages.LoginModel
 @{
-    Layout = "View/Shared/_Layout2"; // Precisa ter página View e Shared
+    Layout = "View/Shared/_Layout"; // Precisa ter página Shared
+    ViewData["Title"] = "Login";
 }
 
 
-<title>Login</title>
 
 <div>
     <p>Login</p>
 </div>
+
+@section scripts{
+    <script src="~/js/site.js">
+        
+    </script>
+}
